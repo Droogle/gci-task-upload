@@ -1,6 +1,6 @@
-GCI API Task Upload - PHP CLI
+GCI Task Upload - PHP CLI
 ===========================
-This API can be used to upload tasks to [Google Code-in](http://codein.withgoogle.com) using an array of tasks in a json file.
+This tool can be used to upload tasks to [Google Code-in](http://codein.withgoogle.com) using an array of tasks in a json file.
 
 Drupal
 ------
