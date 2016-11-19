@@ -1,0 +1,21 @@
+{
+    "name": "droogle/gci-task-upload",
+    "description": "Google Code-in API Task Upload CLI App",
+    "keywords": ["google", "code-in", "task", "upload"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Getulio Sanchez",
+            "email": "valentin2507@gmail.com",
+            "homepage": "http://www.gvsanz.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Droogle\\GciTaskUpload\\": "src/"
+        }
+    },
+    "require": {
+        "droogle/gci-php": "^1.0.0"
+    }
+}
