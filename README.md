@@ -38,8 +38,10 @@ Task list example
 
 Example
 ------
-This is a an example of uploading tasks via the your OS terminal.
+To upload tasks via your OS terminal: 
 ```php upload.php <api-key> <path-to-json-file>```
+
+Easy!
 
 License
 -------
