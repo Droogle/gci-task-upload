@@ -1,11 +1,21 @@
 GCI API Task Upload - PHP CLI
 ===========================
-This API can be upload tasks to [Google Code-in](http://codein.withgoogle.com) using an array of tasks in a json file.
+This API can be used to upload tasks to [Google Code-in](http://codein.withgoogle.com) using an array of tasks in a json file.
+
+Drupal
+------
+This tool was created and is maintained by the Drupal community
 
 Installation
 ------
-Clone this repository :
-```git clone https://github.com/Droogle/gci-task-upload```
+Clone this repository:
+```console
+git clone https://github.com/Droogle/gci-task-upload
+```
+Install dependencies
+```console
+composer install
+```
 
 Task list example
 ------
@@ -39,8 +49,9 @@ Task list example
 Example
 ------
 To upload tasks via your OS terminal: 
-```php upload.php <api-key> <path-to-json-file>```
-
+```
+php upload.php <api-key> <path-to-json-file>
+```
 Easy!
 
 License
