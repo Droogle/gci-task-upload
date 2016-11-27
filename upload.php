@@ -33,10 +33,10 @@ foreach($tasks as $task) {
     'description' => $task->description,
     'status' => TaskInterface::STATUS_PUBLISHED,
     'max_instances' => $task->max_instances,
-    'tags' => $task->tags,
-    'mentors'=> $task->mentors,
+    'tags' => check_array($task->tags),
+    'mentors'=> check_array($task->mentors),
     'is_beginner' => $task->is_beginner,
-    'categories' => $task->categories,
+    'categories' => check_array($task->categories),
     'time_to_complete_in_days' => $task->time_to_complete_in_days,
   ]);
 
@@ -51,4 +51,25 @@ foreach($tasks as $task) {
 
     echo $msg;
   }
+}
+
+/**
+ * Checks if a value is an array.
+ *
+ * Fields such as mentors, categories, and tags must be passed as arrays of
+ * values. However, a exported json file might not have an array if there is
+ * only a mentor, tag, or category for a task.
+ *
+ * @param $var
+ *   The value for an array field.
+ *
+ * @return array
+ *   The correct array value for the field.
+ */
+function check_array($var) {
+  if(!is_array($var)) {
+    $var = array($var);
+  }
+
+  return $var;
 }
