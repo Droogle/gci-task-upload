@@ -2,9 +2,9 @@
 
 include 'vendor/autoload.php';
 
-use Droogle\GCI\Client;
-use Droogle\GCI\Task;
-use Droogle\GCI\TaskInterface;
+use Droogle\Gci\Client;
+use Droogle\Gci\Task\Task;
+use Droogle\Gci\Task\TaskInterface;
 use Droogle\GciTaskUpload\TextFormat;
 
 $text = new TextFormat();
@@ -57,8 +57,9 @@ foreach($tasks as $task) {
  * Checks if a value is an array.
  *
  * Fields such as mentors, categories, and tags must be passed as arrays of
- * values. However, a exported json file might not have an array if there is
- * only a mentor, tag, or category for a task.
+ * values. However, an exported json file might not have an array if there is
+ * only one mentor, tag, or category for a task. In such case, this function
+ * returns an array version of the value.
  *
  * @param $var
  *   The value for an array field.
