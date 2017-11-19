@@ -29,8 +29,8 @@ $tasks = json_decode(file_get_contents($argv[2]));
 
 foreach($tasks as $task) {
   $newTask = new Task([
-    'name' => $task->name,
-    'description' => $task->description,
+    'name' => check_string($task->name),
+    'description' => check_string($task->description),
     'status' => TaskInterface::STATUS_PUBLISHED,
     'max_instances' => $task->max_instances,
     'tags' => check_array($task->tags),
@@ -51,6 +51,27 @@ foreach($tasks as $task) {
 
     echo $msg;
   }
+}
+
+/**
+ * Checks if a value is a string.
+ *
+ * Fields such as name and description must be passed as strings. However, an
+ * exported json file might have parts of the text in different array elements
+ * since the exported might have splitted the text because of the commas (,)
+ *
+ * @param array|string $var
+ *   The value for an string field.
+ *
+ * @return string
+ *   The correct string value for the field.
+ */
+function check_string($var) {
+  if (is_array($var)) {
+    return implode(', ', $var);
+  }
+  
+  return $var;
 }
 
 /**
