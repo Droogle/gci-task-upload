@@ -64,7 +64,7 @@ string or intenger (not as an array), the JSON file can include those fields as:
 ```
 **Extra:** The Drupal community uses a tool that explodes the data in an
 array if there are commas. This was an issue for the fields name and
-description, those fields can be passed as arrays and will be imploded with
+description, so those fields can be passed as arrays and will be imploded with
 a comma in between.
 
 Example
