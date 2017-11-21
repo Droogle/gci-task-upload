@@ -47,6 +47,26 @@ Task list example
 ]
 ```
 
+Since a JSON Exporter might export the fields tags, mentors, and categories as 
+string or intenger (not as a array), the JSON file can include those fields as:
+```json
+{
+  "name": "A task",
+  "description": "A longer description of the task with links, etc.",
+  "status": 2,
+  "max_instances": 35,
+  "tags": "programming",
+  "mentors": "mentor@org.com",
+  "is_beginner": false,
+  "categories": 1,
+  "time_to_complete_in_days": 4
+}
+```
+**Extra:** Since the tool the Drupal community uses explodes the data in an
+array if there are commas, this was an issue for the fields name and
+description. So, those fields can be passed as arrays and will be implode with
+a comma in between.
+
 Example
 ------
 To upload tasks via your OS terminal: 
