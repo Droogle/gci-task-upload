@@ -48,7 +48,7 @@ Task list example
 ```
 
 Since a JSON Exporter might export the fields tags, mentors, and categories as 
-string or intenger (not as a array), the JSON file can include those fields as:
+string or intenger (not as an array), the JSON file can include those fields as:
 ```json
 {
   "name": "A task",
@@ -62,9 +62,9 @@ string or intenger (not as a array), the JSON file can include those fields as:
   "time_to_complete_in_days": 4
 }
 ```
-**Extra:** Since the tool the Drupal community uses explodes the data in an
-array if there are commas, this was an issue for the fields name and
-description. So, those fields can be passed as arrays and will be implode with
+**Extra:** The Drupal community uses a tool that explodes the data in an
+array if there are commas. This was an issue for the fields name and
+description, those fields can be passed as arrays and will be imploded with
 a comma in between.
 
 Example
