@@ -10,10 +10,11 @@ Installation
 ------
 Clone this repository:
 ```console
-git clone https://github.com/Droogle/gci-task-upload
+git clone https://github.com/Droogle/gci-task-upload gci-task-upload
 ```
 Install dependencies
 ```console
+cd gci-task-upload
 composer install
 ```
 
