@@ -68,7 +68,7 @@ foreach($tasks as $task) {
  */
 function check_string($var) {
   if (is_array($var)) {
-    return implode(', ', $var);
+    $var = implode(', ', $var);
   }
   
   return $var;
@@ -99,7 +99,7 @@ function check_array($var) {
 /**
  * Checks if the time_to_complete_in_days value is valid.
  * 
- * GCI API specify that the time to complete in days field should have values
+ * GCI API specifies that the time to complete in days field should have values
  * >= 3 and <=7. This function checks if the passed value is in the correct
  * range.
  * 
