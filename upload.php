@@ -20,16 +20,16 @@ if(!isset($argv[2])) {
   exit;
 }
 
-// If both parameters are provided.
-
 // Creates a GCI Client.
 $client = new Client($argv[1]);
 // Reads the list of tasks.
 $tasks = json_decode(file_get_contents($argv[2]));
 
 foreach($tasks as $task) {
+  $name = check_string($task->name);
+
   $newTask = new Task([
-    'name' => check_string($task->name),
+    'name' => $name,
     'description' => check_string($task->description),
     'status' => TaskInterface::STATUS_PUBLISHED,
     'max_instances' => $task->max_instances,
@@ -46,7 +46,7 @@ foreach($tasks as $task) {
   // If the task was created successfully.
   if(isset($response['name'])) {
     $msg = $text->green('The task ') . 
-           $text->boldGreen( $task->name ) .
+           $text->boldGreen( $name ) .
            $text->green(' was successfully created') . "\n";
 
     echo $msg;
