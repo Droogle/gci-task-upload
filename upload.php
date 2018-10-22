@@ -45,7 +45,7 @@ foreach($tasks as $task) {
 
   // If the task was created successfully.
   if(isset($response['name'])) {
-    $msg = $text->green('The task ') . 
+    $msg = $text->green('The task ') .
            $text->boldGreen( $name ) .
            $text->green(' was successfully created') . "\n";
 
@@ -70,7 +70,7 @@ function check_string($var) {
   if (is_array($var)) {
     $var = implode(', ', $var);
   }
-  
+
   return $var;
 }
 
@@ -98,11 +98,11 @@ function check_array($var) {
 
 /**
  * Checks if the time_to_complete_in_days value is valid.
- * 
+ *
  * GCI API specifies that the time to complete in days field should have values
  * >= 3 and <=7. This function checks if the passed value is in the correct
  * range.
- * 
+ *
  * @param int $days_to_complete
  *   The time to complete the task.
  * @return int
